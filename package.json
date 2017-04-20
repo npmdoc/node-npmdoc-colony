@@ -1,1 +1,39 @@
-{     "devDependencies": {         "colony": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-colony",     "homepage": "https://github.com/npmdoc/node-npmdoc-colony",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-colony.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### api documentation for  [colony (v0.0.7)](https://github.com/hughsk/colony)  [![npm package](https://img.shields.io/npm/v/npmdoc-colony.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-colony) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-colony.svg)](https://travis-ci.org/npmdoc/node-npmdoc-colony)",
+    "devDependencies": {
+        "colony": "*",
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-colony",
+    "keywords": [
+        "documentation",
+        "colony"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_colony.js",
+    "name": "npmdoc-colony",
+    "nameAlias": "npmdoc_colony",
+    "nameOriginal": "npmdoc-colony",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-colony.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
